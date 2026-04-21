@@ -1,25 +1,28 @@
-import { createContext, useEffect, useState } from "react";
+import { useState } from "react";
+import posts from "../data/posts.json";
+import { GeneralContext } from "./GeneralContext";
 
-export const GeneralContext = createContext()
-export const GeneralProvider = ({children}) => {
-    
-    useEffect(() => {
-        const getBlog = async () => {
-            const blogres = await fetch('/data/posts.json');
-            const blog = await blogres.json();
-            setBlog(blog)
-        };
+export const GeneralProvider = ({ children }) => {
+  const [query, setQuery] = useState("");
 
-        getBlog();
-    }, [])
-
-    const [blog, setBlog] = useState([])
-    const [query, setQuery] = useState('')
-    const searchedPosts = blog.filter((blog) => blog.title.toLowerCase().includes(query.toLowerCase()))
+  const normalizedQuery = query.trim().toLowerCase();
+  const searchedPosts = posts.filter((item) => {
+    if (!normalizedQuery) return true;
 
     return (
-        <GeneralContext.Provider value={{query, setQuery, searchedPosts}}>
-            {children}
-        </GeneralContext.Provider>
-    )
-}
+      item.title.toLowerCase().includes(normalizedQuery) ||
+      item.author.toLowerCase().includes(normalizedQuery) ||
+      item.category.toLowerCase().includes(normalizedQuery)
+    );
+  });
+
+  const getPostBySlug = (slug) => posts.find((item) => item.slug === slug) ?? null;
+
+  return (
+    <GeneralContext.Provider
+      value={{ blog: posts, query, setQuery, searchedPosts, getPostBySlug }}
+    >
+      {children}
+    </GeneralContext.Provider>
+  );
+};

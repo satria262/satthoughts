@@ -1,23 +1,36 @@
+import { useContext } from "react"
 import { useParams } from "react-router-dom"
-import { useEffect, useState } from "react"
 import Header from "../partials/Header"
 import tiktok from "../src/assets/tiktok.png"
 import instagram from "../src/assets/instagram.png"
 import facebook from "../src/assets/facebook.png"
 import { Link } from "react-router-dom"
 import Footer from "../partials/Footer"
+import { GeneralContext } from "../contexts/GeneralContext"
+import { getPostImage } from "../src/utils/postAssets"
 
 export default function Show() {
     const { slug } = useParams()
-    const [post, setPost] = useState({})
-    // const image =  `${process.env.PUBLIC_URL}/assets`
-    useEffect(async () => {
-        const postsres = await fetch('/data/posts.json')
-        const posts = await postsres.json() 
-        const find = posts.find(item => item.slug == slug)
-        console.log(find.slug)
-        setPost(find)
-}, [])
+    const { getPostBySlug } = useContext(GeneralContext)
+    const post = getPostBySlug(slug)
+
+    if (!post) {
+        return (
+            <>
+                <div className="bg-[#232425] pb-4 pt-16 text-white">
+                    <Header />
+                    <div className="p-4 text-center">
+                        <p className="text-2xl font-semibold">Post not found</p>
+                        <Link to="/" className="mt-4 inline-block text-[#8F9E80]">
+                            Back
+                        </Link>
+                    </div>
+                </div>
+                <Footer />
+            </>
+        )
+    }
+
     return (
         <>
         <div className="bg-[#232425] text-white pt-16 pb-4">
@@ -37,7 +50,7 @@ export default function Show() {
                 </div>
             </div>
         </div>
-        <img src={`/src/assets/${post.image}`} alt="" className="aspect-square object-cover" />
+        <img src={getPostImage(post.image)} alt={post.title} className="aspect-square object-cover" />
         <p className="text-center text-gray-400">{post.slug}</p>
         <div className="text-start p-4 space-y-2">
             <article>

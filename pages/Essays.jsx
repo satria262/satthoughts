@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import Header from "../partials/Header";
 import image from "../src/assets/thumbnail.jpg";
-import { GeneralContext } from "../contexts/General";
+import { GeneralContext } from "../contexts/GeneralContext";
 import Card from "../partials/Card";
 import Footer from "../partials/Footer";
 
@@ -20,7 +20,7 @@ export default function Essays() {
         </div>
         <div className="p-4">
           {searchedPosts.map((posts) => (
-            <Card post={posts} />
+            <Card key={posts.id} post={posts} />
           ))}
         </div>
       </div>

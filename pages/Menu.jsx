@@ -1,9 +1,9 @@
 import { useContext } from "react"
-import { Link, useRoutes } from "react-router-dom"
-import { ToggleContext } from "../contexts/Toggle"
+import { Link } from "react-router-dom"
+import { ToggleContext } from "../contexts/ToggleContext"
 
 export default function Menu () {
-    const {onMenu, setOnMenu} = useContext(ToggleContext)
+    const {setOnMenu} = useContext(ToggleContext)
 
     return (
         <div className="w-full p-4 flex flex-col justify-between h-screen bg-[#232425] fixed top-0 z-20">

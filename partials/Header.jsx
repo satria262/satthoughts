@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react"
-import { ToggleContext } from "../contexts/Toggle";
+import { ToggleContext } from "../contexts/ToggleContext";
 import Menu from "../pages/Menu";
 import { Link } from "react-router-dom";
-import { GeneralContext } from "../contexts/General";
+import { GeneralContext } from "../contexts/GeneralContext";
 
 export default function Header() {
     const { onMenu, setOnMenu } = useContext(ToggleContext)
