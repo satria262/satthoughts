@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "title": "Lorem Ipsum",
+        "slug": "lorem-ipsum",
+        "author": "Satria Aditama",
+        "category": "Insight",
+        "date": "17 March 26",
+        "image": "dummy.jpg",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ex soluta vero nulla explicabo tenetur veritatis reiciendis odio quibusdam unde. Rerum magni aliquam, accusantium neque suscipit dolorem culpa, dolorum distinctio beatae corrupti quia fugit optio ut architecto. Atque at aliquid ut reiciendis magni. Similique voluptas fugiat expedita ratione, nemo nam temporibus deserunt labore sequi aspernatur repellat odit asperiores rerum ducimus et! Saepe molestias consequatur nostrum blanditiis. Iste quisquam deserunt natus sunt? Blanditiis unde laudantium eos, ullam voluptas necessitatibus cum quisquam harum. Perferendis in cumque voluptates!"
+    },
+    {
+        "id": 2,
+        "title": "Dolor Sit",
+        "slug": "dolor-sit",
+        "author": "Satria Aditama",
+        "category": "Insight",
+        "date": "18 March 26",
+        "image": "thumbnail.jpg",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ex soluta vero nulla explicabo tenetur veritatis reiciendis odio quibusdam unde. Rerum magni aliquam, accusantium neque suscipit dolorem culpa, dolorum distinctio beatae corrupti quia fugit optio ut architecto. Atque at aliquid ut reiciendis magni. Similique voluptas fugiat expedita ratione, nemo nam temporibus deserunt labore sequi aspernatur repellat odit asperiores rerum ducimus et! Saepe molestias consequatur nostrum blanditiis. Iste quisquam deserunt natus sunt? Blanditiis unde laudantium eos, ullam voluptas necessitatibus cum quisquam harum. Perferendis in cumque voluptates! Yes"
+    },
+    {
+        "id": 3,
+        "title": "Amet",
+        "slug": "amet",
+        "author": "Satria Aditama",
+        "category": "Insight",
+        "date": "18 March 26",
+        "image": "dummy.jpg",
+        "content": "Ipsum dolor sit amet consectetur adipisicing elit. Enim ex soluta vero nulla explicabo tenetur veritatis reiciendis odio quibusdam unde. Rerum magni aliquam, accusantium neque suscipit dolorem culpa, dolorum distinctio beatae corrupti quia fugit optio ut architecto. Atque at aliquid ut reiciendis magni. Similique voluptas fugiat expedita ratione, nemo nam temporibus deserunt labore sequi aspernatur repellat odit asperiores rerum ducimus et! Saepe molestias consequatur nostrum blanditiis. Iste quisquam deserunt natus sunt? Blanditiis unde laudantium eos, ullam voluptas necessitatibus cum quisquam harum. Perferendis in cumque voluptates! Yes"
+    },
+    {
+        "id": 4,
+        "title": "Far away",
+        "slug": "far-away",
+        "author": "Satria Aditama",
+        "category": "Insight",
+        "date": "18 March 26",
+        "image": "thumbnail.jpg",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ex soluta vero nulla explicabo tenetur veritatis reiciendis odio quibusdam unde. Rerum magni aliquam, accusantium neque suscipit dolorem culpa, dolorum distinctio beatae corrupti quia fugit optio ut architecto. Atque at aliquid ut reiciendis magni. Similique voluptas fugiat expedita ratione, nemo nam temporibus deserunt labore sequi aspernatur repellat odit asperiores rerum ducimus et! Saepe molestias consequatur nostrum blanditiis. Iste quisquam deserunt natus sunt? Blanditiis unde laudantium eos, ullam voluptas necessitatibus cum quisquam harum. Perferendis in cumque voluptates! Yes"
+    },
+    {
+        "id": 5,
+        "title": "Franz Kafka",
+        "slug": "franz-kafka",
+        "author": "Satria Aditama",
+        "category": "Insight",
+        "date": "18 March 26",
+        "image": "dummy.jpg",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ex soluta vero nulla explicabo tenetur veritatis reiciendis odio quibusdam unde. Rerum magni aliquam, accusantium neque suscipit dolorem culpa, dolorum distinctio beatae corrupti quia fugit optio ut architecto. Atque at aliquid ut reiciendis magni. Similique voluptas fugiat expedita ratione, nemo nam temporibus deserunt labore sequi aspernatur repellat odit asperiores rerum ducimus et! Saepe molestias consequatur nostrum blanditiis. Iste quisquam deserunt natus sunt? Blanditiis unde laudantium eos, ullam voluptas necessitatibus cum quisquam harum. Perferendis in cumque voluptates! Yes"
+    }
+]
