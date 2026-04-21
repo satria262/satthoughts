@@ -5,14 +5,23 @@ import Menu from "./Menu";
 import thumbnail from '../src/assets/thumbnail.jpg'
 import { Link } from "react-router-dom";
 import { ToggleContext } from "../contexts/Toggle";
-import posts from '../data/posts.json'
 import { GeneralContext } from "../contexts/General";
 import Card from "../partials/Card";
 import satria from '../src/assets/satria.jpeg'
 import essays from '../src/assets/essays.jpg'
 
 export default function Home () {
-    const [blog, setBlog] = useState(posts)
+    useEffect(() => {
+        const getBlog = async () => {
+            const blogres = await fetch('/data/posts.json');
+            const blog = await blogres.json();
+            setBlog(blog)
+        };
+
+        getBlog();
+    }, [])
+
+    const [blog, setBlog] = useState([])
     const {onMenu, setOnMenu} = useContext(ToggleContext)
     const {query, searchedPosts} = useContext(GeneralContext)
     const [guestName, setGuestName] = useState('')

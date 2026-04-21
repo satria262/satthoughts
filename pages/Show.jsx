@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom"
-import posts from '../data/posts.json'
 import { useEffect, useState } from "react"
 import Header from "../partials/Header"
 import tiktok from "../src/assets/tiktok.png"
@@ -9,8 +8,18 @@ import { Link } from "react-router-dom"
 import Footer from "../partials/Footer"
 
 export default function Show() {
-    const { slug } = useParams()
+    useEffect(() => {
+        const getBlog = async () => {
+            const blogres = await fetch('/data/posts.json');
+            const blog = await blogres.json();
+            setPost(blog)
+        };
+
+        getBlog();
+    }, [])
+
     const [post, setPost] = useState({})
+    const { slug } = useParams()
     // const image =  `${process.env.PUBLIC_URL}/assets`
     useEffect(() => {
         const find = posts.find(item => item.slug == slug)
