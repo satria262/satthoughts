@@ -8,20 +8,12 @@ import { Link } from "react-router-dom"
 import Footer from "../partials/Footer"
 
 export default function Show() {
-    useEffect(() => {
-        const getBlog = async () => {
-            const blogres = await fetch('/data/posts.json');
-            const blog = await blogres.json();
-            setPost(blog)
-        };
-
-        getBlog();
-    }, [])
-
-    const [post, setPost] = useState({})
     const { slug } = useParams()
+    const [post, setPost] = useState({})
     // const image =  `${process.env.PUBLIC_URL}/assets`
-    useEffect(() => {
+    useEffect(async () => {
+        const postsres = await fetch('/data/posts.json')
+        const posts = await postsres.json() 
         const find = posts.find(item => item.slug == slug)
         console.log(find.slug)
         setPost(find)

@@ -33,7 +33,7 @@ export default function Home () {
                 <div className="relative p-4 overflow-hidden">
                     <img src={satria} alt="" className="object-cover"/>
                     <div className="bg-linear-to-t from-black to-black/10 space-y-4 absolute bottom-0 right-0 left-0 z-10 w- lg:p-8">
-                        <h1 className="text-center font-medium text-white text-2xl">Sugeng Rawuh, {guestName} <br /> Monggo Sekecaaken</h1>
+                        <h1 className="text-center font-medium text-white text-2xl">Selamat datang, {guestName} <br /> Salam hangat dari saya.</h1>
                         <div className="bg-[#232425] flex justify-between px-2 py-1 rounded-full lg:pr-4">
                             <input type="text" name="" id="" placeholder="..." className="pl-4 text-white placeholder:text-gray-200 outline-none" onChange={e => setGuestName(e.target.value)} />
                             <div className="bg-[#747F69] text-white text-lg px-4 py-2 rounded-full">
