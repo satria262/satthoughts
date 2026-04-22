@@ -43,14 +43,11 @@ export default function Show() {
             <div className="text-center text-gray-300">
                 <p className="font-medium">{post.author}</p>
                 <p>on {post.date}</p>
-                <div className="flex justify-evenly w-1/2 mx-auto my-4">
-                    <img src={tiktok} alt="" className="size-8 border-white bg-white border rounded-full" />
-                    <img src={facebook} alt="" className="size-8 border-white bg-white border rounded-full" />
-                    <img src={instagram} alt="" className="size-8 border-white bg-white border rounded-full" />
-                </div>
             </div>
         </div>
-        <img src={getPostImage(post.image)} alt={post.title} className="aspect-square object-cover" />
+        <div className="flex justify-center">
+        <img src={getPostImage(post.image)} alt={post.title} className="aspect-square object-cover rounded-lg" />
+        </div>
         <p className="text-center text-gray-400">{post.slug}</p>
         <div className="text-start p-4 space-y-2">
             <article>

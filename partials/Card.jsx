@@ -10,7 +10,7 @@ export default function Card ({post}) {
                     <p className="text-gray-200 text-center"><i>by</i> {post.author} <i>on</i> {post.date}</p>
                     <h1 className="text-start text-gray-200 text-4xl">{post.title}</h1>
                     <p className="text-start text-gray-300 text-2xl">Over the last week I've jotted down a bunch of notes in a "Things to Blog"</p>
-                    <Link to={`/posts/${post.slug}`} className="text-white font-medium rounded-full px-3 py-1 transition-all duration-500 border-[#8F9E80] border-2 w-fit hover:bg-[#8F9E80]">Continue Reading</Link>
+                    <Link to={`/posts/${post.slug}`} className="text-white font-medium rounded-full px-3 py-1 transition-all duration-500 border-[#DAC5A7] border-2 w-fit hover:bg-[#DAC5A7]">Continue Reading</Link>
                 </div>
             </div>
         </div> 

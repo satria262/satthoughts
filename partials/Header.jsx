@@ -19,7 +19,7 @@ export default function Header() {
     return (
         <>
         <header className="fixed top-0 bg-[#232425] w-full p-4 flex justify-between items-center z-30">
-            <h1 className="text-[#77836B] text-4xl font-bold">ADITAMA</h1>
+            <Link to={`/`}><h1 className="font-imperial-script text-[#DAC5A7] text-5xl font-normal">Aditama</h1></Link>
             <div className="flex items-center space-x-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-white" role="button" onClick={() => setOnSearch(!onSearch)}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
