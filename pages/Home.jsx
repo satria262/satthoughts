@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import Footer from "../partials/Footer";
 import Header from "../partials/Header";
 import { ToggleContext } from "../contexts/ToggleContext";
@@ -21,16 +21,15 @@ function ArrowUpRight() {
 export default function Home() {
   const { onMenu } = useContext(ToggleContext);
   const { searchedPosts } = useContext(GeneralContext);
-  const [guestName, setGuestName] = useState("");
 
   return (
     <>
       <Header />
-      <div className="border-b-2 border-[#292A2B] bg-[#171819] pt-16">
+      <div className="page-shell border-b-2 border-[#292A2B] bg-[#171819] pt-16">
         <div className="relative overflow-hidden lg:h-170">
-          <img src={satriahero} alt="" className="object-cover w-full h-100 lg:h-full" />
-          <div className="absolute right-0 bottom-0 left-0 h-[75%] flex flex-col justify-end pb-4 z-10 space-y-4 bg-linear-to-t from-zinc-950 to-zinc-950/0 lg:p-8">
-            <h1 className="text-center text-2xl lg:text-6xl italic font-medium text-white">
+          <img src={satriahero} alt="" className="page-hero-image object-cover w-full h-100 lg:h-full" />
+          <div className="absolute right-0 -bottom-0.5 left-0 h-[75%] flex flex-col justify-end pb-4 z-10 space-y-4 bg-linear-to-t from-zinc-950 to-zinc-950/0 lg:p-8">
+            <h1 className="page-enter text-center text-2xl lg:text-6xl italic font-medium text-white" style={{ "--enter-delay": "140ms" }}>
               Selamat datang
               <br />
               Salam hangat dari saya <span className="text-[#DAC5A7]">Satria Aditama.</span>
@@ -48,11 +47,11 @@ export default function Home() {
             </div> */}
           </div>
         </div>
-        <article className="p-4 text-center text-white font-light tracking-wider">
+        <article className="page-enter p-4 text-center text-white font-light tracking-wider" style={{ "--enter-delay": "260ms" }}>
           Aditama adalah personal blog website yang saya kembangkan untuk mengisi waktu senggang saya sebagai media berpikir saya.
         </article>
         <section className="p-4 lg:grid lg:grid-cols-3 lg:gap-8 md:mb-34">
-          <div className="relative h-20">
+          <div className="page-enter relative h-20" style={{ "--enter-delay": "360ms" }}>
             <img src={essays} alt="" className="aspect-video rounded-t-2xl md:rounded-2xl h-20 md:h-50 w-full object-cover" />
             <div className="flex justify-between">
               <div>
@@ -66,7 +65,7 @@ export default function Home() {
               <p className="absolute top-4 right-4 text-white text-md tracking-wider uppercase flex bg-[#23211E]/30 rounded-full p-2 border border-[#DAC5A7]"><Link to={`/posts/essays`}><ArrowUpRight/></Link></p>
             </div>
           </div>
-          <div className="relative h-20">
+          <div className="page-enter relative h-20" style={{ "--enter-delay": "460ms" }}>
             <img src={notes} alt="" className="aspect-video md:rounded-2xl h-20 md:h-50 w-full object-cover" />
             <div className="flex justify-between">
               <div>
@@ -80,7 +79,7 @@ export default function Home() {
               <p className="absolute top-4 right-4 text-white text-md tracking-wider uppercase flex bg-[#23211E]/30 rounded-full p-2 border border-[#DAC5A7]"><Link to={`/posts/notes`}><ArrowUpRight/></Link></p>
             </div>
           </div>
-          <div className="relative h-20">
+          <div className="page-enter relative h-20" style={{ "--enter-delay": "560ms" }}>
             <img src={programming} alt="" className="aspect-video rounded-b-2xl md:rounded-2xl h-20 md:h-50 w-full object-cover" />
             <div className="flex justify-between">
               <div>
@@ -96,10 +95,13 @@ export default function Home() {
           </div>
         </section>
         <div className="space-y-4 p-4">
-          <p className="text-gray-200">Latest stories</p>
+          <div className="page-enter flex items-center gap-4" style={{ "--enter-delay": "640ms" }}>
+            <p className="text-gray-200 uppercase tracking-[0.35em] text-sm">Latest stories</p>
+            <span className="section-line h-px flex-1 bg-[#DAC5A7]/50" style={{ "--enter-delay": "700ms" }} />
+          </div>
           <div className="lg:grid lg:grid-cols-3 lg:gap-8">
-            {searchedPosts.map((post) => (
-              <Card key={post.id} post={post} />
+            {searchedPosts.map((post, index) => (
+              <Card key={post.id} post={post} index={index} />
             ))}
           </div>
         </div>

@@ -4,3 +4,112 @@
 .font-imperial-script {
   font-family: "Imperial Script", cursive;
 }
+
+:root {
+  --ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes soft-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0) scale(0.985);
+    filter: blur(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes soft-reveal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hero-drift {
+  from {
+    transform: scale(1.08);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes line-grow {
+  from {
+    opacity: 0;
+    transform: scaleX(0.3);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+.page-shell {
+  animation: soft-reveal 0.8s var(--ease-luxury) both;
+}
+
+.page-hero-image {
+  transform-origin: center center;
+  animation: hero-drift 1.8s var(--ease-luxury) both;
+}
+
+.page-enter {
+  opacity: 0;
+  animation: soft-rise 0.9s var(--ease-luxury) forwards;
+  animation-delay: var(--enter-delay, 0ms);
+  will-change: transform, opacity, filter;
+}
+
+.section-line {
+  transform-origin: left center;
+  animation: line-grow 0.9s var(--ease-luxury) both;
+  animation-delay: var(--enter-delay, 0ms);
+}
+
+.story-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.story-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 20%, rgba(255, 255, 255, 0.08) 50%, transparent 80%);
+  transform: translateX(-130%);
+  transition: transform 0.9s var(--ease-luxury);
+  pointer-events: none;
+}
+
+.story-card:hover::after {
+  transform: translateX(130%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-shell,
+  .page-hero-image,
+  .page-enter,
+  .section-line {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .story-card::after {
+    transition: none;
+  }
+}
