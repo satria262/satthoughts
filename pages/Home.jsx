@@ -29,7 +29,7 @@ export default function Home() {
       <div className="border-b-2 border-[#292A2B] bg-[#171819] pt-16">
         <div className="relative overflow-hidden lg:h-170">
           <img src={satriahero} alt="" className="object-cover w-full h-100 lg:h-full" />
-          <div className="absolute right-0 bottom-0 left-0 h-full flex flex-col justify-end pb-4 z-10 space-y-4 bg-linear-to-t from-zinc-950 to-zinc-950/10 lg:p-8">
+          <div className="absolute right-0 bottom-0 left-0 h-[75%] flex flex-col justify-end pb-4 z-10 space-y-4 bg-linear-to-t from-zinc-950 to-zinc-950/0 lg:p-8">
             <h1 className="text-center text-2xl lg:text-6xl italic font-medium text-white">
               Selamat datang
               <br />
