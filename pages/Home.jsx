@@ -4,8 +4,10 @@ import Header from "../partials/Header";
 import { ToggleContext } from "../contexts/ToggleContext";
 import { GeneralContext } from "../contexts/GeneralContext";
 import Card from "../partials/Card";
-import satria from "../src/assets/satria.jpeg";
+import satriahero from "../src/assets/satria-hero.png";
 import essays from "../src/assets/essays.jpg";
+import notes from "../src/assets/category/notes.jpg";
+import programming from "../src/assets/category/programming.jpg";
 
 export default function Home() {
   const { onMenu } = useContext(ToggleContext);
@@ -16,15 +18,15 @@ export default function Home() {
     <>
       <Header />
       <div className="border-b-2 border-[#292A2B] bg-[#171819] pt-16">
-        <div className="relative overflow-hidden p-4">
-          <img src={satria} alt="" className="object-cover" />
-          <div className="absolute right-0 bottom-0 left-0 z-10 space-y-4 bg-linear-to-t from-black to-black/10 lg:p-8">
+        <div className="relative overflow-hidden lg:p-4 lg:h-170">
+          <img src={satriahero} alt="" className="object-cover w-full h-100" />
+          <div className="absolute right-0 bottom-0 left-0 h-full flex flex-col justify-end pb-4 z-10 space-y-4 bg-linear-to-t from-black to-black/10 lg:p-8">
             <h1 className="text-center text-2xl font-medium text-white">
-              Selamat datang, {guestName}
+              Selamat datang
               <br />
-              Salam hangat dari saya.
+              Salam hangat dari saya Satria Aditama.
             </h1>
-            <div className="flex justify-between rounded-full bg-[#232425] px-2 py-1 lg:pr-4">
+            <div className="flex justify-between rounded-full bg-[#232425] px-2 py-1">
               <input
                 type="text"
                 placeholder="..."
@@ -38,14 +40,13 @@ export default function Home() {
           </div>
         </div>
         <article className="p-4 text-center text-white">
-          Selamat datang di website personal blog saya
-          {guestName ? `, ${guestName}` : ""}. Di waktu senggang saya
+          Aditama. Di waktu senggang saya
           menyempatkan untuk membangun website ini sebagai media berpikir saya.
           Monggo pinarak dan happy reading!
         </article>
-        <section className="space-y-4 p-4 lg:grid lg:grid-cols-3 lg:gap-8">
-          <div className="relative">
-            <img src={essays} alt="" className="aspect-video rounded-2xl" />
+        <section className="p-4 lg:grid lg:grid-cols-3 lg:gap-8">
+          <div className="relative h-20">
+            <img src={essays} alt="" className="aspect-video rounded-t-2xl md:rounded-2xl " />
             <h1 className="absolute bottom-4 p-4 text-3xl font-medium text-white">
               Tulisan
             </h1>
@@ -53,22 +54,22 @@ export default function Home() {
               Essays
             </p>
           </div>
-          <div className="relative">
-            <img src={essays} alt="" className="aspect-video rounded-2xl" />
+          <div className="relative h-20">
+            <img src={notes} alt="" className="aspect-video md:rounded-2xl " />
             <h1 className="absolute bottom-4 p-4 text-3xl font-medium text-white">
               Catatan
             </h1>
             <p className="absolute bottom-1 pl-4 text-xl italic text-white">
-              Essays
+              Notes
             </p>
           </div>
-          <div className="relative">
-            <img src={essays} alt="" className="aspect-video rounded-2xl" />
-            <h1 className="absolute bottom-4 p-4 pb-8 text-3xl font-medium text-white">
-              Gagasan
+          <div className="relative h-20">
+            <img src={programming} alt="" className="aspect-video rounded-b-2xl md:rounded-2xl " />
+            <h1 className="absolute bottom-4 p-4 text-3xl font-medium text-white">
+              Temuan
             </h1>
-            <p className="absolute bottom-1 pb-4 pl-4 text-xl italic text-white">
-              Essays
+            <p className="absolute bottom-1 pl-4 text-xl italic text-white">
+              Ideas
             </p>
           </div>
         </section>

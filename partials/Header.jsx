@@ -32,7 +32,7 @@ export default function Header() {
         </header>
         {onSearch &&
         <>
-            <search className="fixed inset-0 bg-black/70 backdrop-blur-xs flex items-start justify-center pt-16  z-20" onClick={() => setOnSearch(false)}>
+            <search className="fixed inset-0 bg-black/70 backdrop-blur-xs flex items-start justify-center pt-20  z-20" onClick={() => setOnSearch(false)}>
                 <div className="absolute bg-white flex justify-between items-center w-9/10 p-4 rounded-lg space-x-2" onClick={(e) => e.stopPropagation()}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
