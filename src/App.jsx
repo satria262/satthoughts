@@ -4,6 +4,7 @@ import Show from "../pages/Show";
 import { ToggleProvider } from "../contexts/Toggle";
 import { GeneralProvider } from "../contexts/General";
 import Essays from "../pages/Essays";
+import AppLayout from "./AppLayout";
 
 function App() {
   return (
@@ -11,11 +12,13 @@ function App() {
       <ToggleProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/posts/:slug" element={<Show />} />
-            <Route path="/posts/essays" element={<Essays />} />
-            <Route path="/posts/notes" element={<Essays />} />
-            <Route path="/posts/ideas" element={<Essays />} />
+            <Route element={<AppLayout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/posts/:slug" element={<Show />} />
+              <Route path="/posts/essays" element={<Essays />} />
+              <Route path="/posts/notes" element={<Essays />} />
+              <Route path="/posts/ideas" element={<Essays />} />
+            </Route>
           </Routes>
         </BrowserRouter>
       </ToggleProvider>

@@ -1,7 +1,4 @@
 import { useContext } from "react";
-import Footer from "../partials/Footer";
-import Header from "../partials/Header";
-import { ToggleContext } from "../contexts/ToggleContext";
 import { GeneralContext } from "../contexts/GeneralContext";
 import Card from "../partials/Card";
 import satriahero from "../src/assets/satria-hero.png";
@@ -19,13 +16,10 @@ function ArrowUpRight() {
 }
 
 export default function Home() {
-  const { onMenu } = useContext(ToggleContext);
   const { searchedPosts } = useContext(GeneralContext);
 
   return (
-    <>
-      <Header />
-      <div className="page-shell border-b-2 border-[#292A2B] bg-[#171819] pt-16">
+    <div className="page-shell border-b-2 border-[#292A2B] bg-[#171819] pt-16">
         <div className="relative overflow-hidden lg:h-170">
           <img src={satriahero} alt="" className="page-hero-image object-cover w-full h-100 lg:h-full" />
           <div className="absolute right-0 -bottom-0.5 left-0 h-[75%] flex flex-col justify-end pb-4 z-10 space-y-4 bg-linear-to-t from-zinc-950 to-zinc-950/0 lg:p-8">
@@ -105,8 +99,6 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </div>
-      {!onMenu && <Footer />}
-    </>
+    </div>
   );
 }

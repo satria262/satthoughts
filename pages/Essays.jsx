@@ -1,16 +1,12 @@
 import { useContext } from "react";
-import Header from "../partials/Header";
 import image from "../src/assets/thumbnail.jpg";
 import { GeneralContext } from "../contexts/GeneralContext";
 import Card from "../partials/Card";
-import Footer from "../partials/Footer";
 
 export default function Essays() {
   const { searchedPosts } = useContext(GeneralContext);
   return (
-    <>
-      <Header />
-      <div className="bg-[#232425] min-h-screen">
+    <div className="bg-[#232425] min-h-screen pt-16">
         <div>
           <img src={image} alt="" className="aspect-square" />
         </div>
@@ -23,8 +19,6 @@ export default function Essays() {
             <Card key={posts.id} post={posts} />
           ))}
         </div>
-      </div>
-      <Footer />
-    </>
+    </div>
   );
 }
