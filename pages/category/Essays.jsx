@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import image from "../src/assets/thumbnail.jpg";
-import { GeneralContext } from "../contexts/GeneralContext";
-import Card from "../partials/Card";
+import image from "../../src/assets/thumbnail.jpg";
+import { GeneralContext } from "../../contexts/GeneralContext";
+import Card from "../../partials/Card";
 
 export default function Essays() {
   const { searchedPosts } = useContext(GeneralContext);
